@@ -46,7 +46,9 @@ class HTTPService {
       var jsonData = await this.parseJSON(response);
       return jsonData;
     } else {
-      deferred.reject('Token is either not valid or has expired.');
+      var deferred = new Promise(function(resolve, reject) {
+          reject('Token is either not valid or has expired.');
+      });
     }
 
     return deferred.promise;

@@ -51,7 +51,7 @@ class HTTPService {
       });
     }
 
-    return deferred.promise;
+    return deferred;
   }
 
   fetch(path, options) {
